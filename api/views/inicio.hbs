@@ -1,0 +1,76 @@
+<header class="py-3 text-center">
+  <h1 id="titulo" class="titulo_principal"></h1>
+</header>
+
+<section class="container border border-primary mb-3">
+  <h2 class="text-center text-decoration-underline py-3 titulo_secundario">
+    Usuarios Masculinos
+  </h2>
+  <h3 class="text-center bg-dark text-light py-2 titulo_terciario">
+    Informacion: {{largoArray datamale}}
+  </h3>
+  {{#if datamale.length}}
+  <div class="table-responsive">
+    <table class="table table-light table-striped table-hover table-bordered">
+      <thead>
+        <tr class="table-info">
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">ID</th>
+          <th scope="col">Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each datamale}}
+        <tr>
+          <td>{{{indexPlusOne @index}}}</td>
+          <td>{{ this.name }}</td>
+          <td>{{ this.lastname }}</td>
+          <td>{{ this.id }}</td>
+          <td>{{ this.date }}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+  {{> nodata}}
+  {{/if}}
+</section>
+<section class="container border border-primary">
+  <h2 class="text-center text-decoration-underline py-3 titulo_secundario">
+    Usuarios Femeninos
+  </h2>
+  <h3 class="text-center bg-dark text-light py-2 titulo_terciario">
+    Informacion: {{largoArray datafemale}}
+  </h3>
+  {{#if datafemale.length}}
+  <div class="table-responsive">
+    <table class="table table-light table-striped table-hover table-bordered">
+      <thead>
+        <tr class="table-info">
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">ID</th>
+          <th scope="col">Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each datafemale}}
+        <tr>
+          <td>{{{indexPlusOne @index}}}</td>
+          <td>{{ this.name }}</td>
+          <td>{{ this.lastname }}</td>
+          <td>{{ this.id }}</td>
+          <td>{{ this.date }}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+  {{> nodata}}
+  {{/if}}
+</section>
